@@ -28,11 +28,8 @@ $.ajax( {
 		},
 	
 		success: function(data) {
-
-			var dataJson = $.parseJSON(data);
-			// console.log(dataJson)
-			currentQuote = dataJson.quote;
-			currentAuthor = dataJson.author;
+			currentQuote = data[0].quote;
+			currentAuthor = data[0].author;
 			$('.quote-author').text('~ '+currentAuthor+' ~');
 			$('.quote-content').html('"'+currentQuote+'"');
 
